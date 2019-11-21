@@ -1,0 +1,19 @@
+package com.image_management.connection;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class MyConnectionProvider implements MyProvider {
+	static Connection con = null;
+	
+	public static Connection getCon() {
+	try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con = DriverManager.getConnection(connUrl,user,passwd);
+	}catch(Exception e){
+		System.out.println(e);
+	}
+	return con;
+	}
+}
+
