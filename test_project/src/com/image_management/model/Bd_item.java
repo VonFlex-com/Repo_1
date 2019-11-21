@@ -37,7 +37,7 @@ public class Bd_item {
 			this.auteur_id = auteur_id;
 			this.genre_id = genre_id;
 			}
-
+//constructeur List items
 	public Bd_item(int bd_id, String serie, String titre, String vignette, String resume, String langue, Timestamp date_crea,
 			Timestamp date_upload, int note_id, int auteur_id, int genre_id) {
 		super();

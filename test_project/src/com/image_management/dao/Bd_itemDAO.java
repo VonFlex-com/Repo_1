@@ -22,10 +22,10 @@ public class Bd_itemDAO {
 	static Connection con;
 	String message;
 	
-	  public List < Bd_item > selectAllUsers() throws IOException {
+	  public List < Bd_item > selectAllItems() throws IOException {
 
-	        // using try-with-resources to avoid closing resources (boiler plate code)
-	        List < Bd_item > users = new ArrayList < > ();
+	        // using try-with-resources to avoid closing resources (boiler plate code), and...
+	        List < Bd_item > items = new ArrayList < > ();
 	        // Step 1: Establishing a Connection
 	        try (Connection con = MyConnectionProvider.getCon();
 
@@ -65,7 +65,7 @@ public class Bd_itemDAO {
 					int noteID = rs.getInt("note_id");
 					int auteurID = rs.getInt("auteur_id");
 					int genreID = rs.getInt("genre_id");
-					users.add(new Bd_item(id,serie,titre,base64Image,resume,lang,datcrea,datuplo,noteID,auteurID,genreID));
+					items.add(new Bd_item(id,serie,titre,base64Image,resume,lang,datcrea,datuplo,noteID,auteurID,genreID));
 					}
 	        } catch (SQLException e) {
 	            printSQLException(e);
@@ -80,7 +80,7 @@ public class Bd_itemDAO {
 					}
 				}
 			}
-	        return users;
+	        return items;
 	    }
 
 	
