@@ -1,0 +1,552 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: Arial;
+}
+
+body {
+	font-family: sans-serif;
+	background: #333333;
+	height: 100vh;
+	color: #b9b9b9;
+}
+
+html {
+	height: 100vh;
+}
+
+nav {
+	z-index: 10;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	background: linear-gradient(#494949 0%, black 100%);
+	padding: 10px 20px;
+	display: block;
+	-webkit-box-shadow: 0px 0px 35px 12px rgba(0, 0, 0, 0.63);
+	box-shadow: 0px 0px 35px 12px rgba(0, 0, 0, 0.63);
+}
+
+.footer {
+	height: auto;
+	background: #3b3b3b;
+	color: gray;
+	-webkit-box-shadow: inset 0px 26px 19px -14px rgba(0, 0, 0, 0.73);
+	box-shadow: inset 0px 26px 19px -14px rgba(0, 0, 0, 0.73);
+}
+
+..borderRed {                                    /*  contour de repérage de div/block à activer ou desactiver */
+	border: 1px solid red;
+	border-radius: 5px;
+}
+
+.page {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.corpsMinHeight {
+	flex-grow: 1;
+}
+
+.titrePage {
+	margin: 30px;
+	font-size: 50px;
+	text-transform: uppercase;
+	font-weight: bolder;
+	text-shadow: 0px 0px 15px black;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.textCenter {
+	text-align: left;
+}
+                                                     /*  propriete menu  */
+                                                      /* bouton log*/
+
+
+.ahref {
+	font-size: 16px;
+	padding: 20px;
+	color: gray;
+	text-decoration: none;
+	font-weight: bold;
+	border: none;
+	background-color: transparent;
+}
+
+.ahref:hover {
+	border: 0;
+	color: orange;
+	padding: 20px;
+	border: 0;
+	-moz-text-shadow: 0 0 20px red, 0 0 10px red;
+	-webkit-text-shadow: 0 0 20px red, 0 0 10px red;
+	text-shadow: 0 0 20px red, 0 0 10px red;
+}
+
+.neonRouge {
+	font-size: 16px;
+	color: gray;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.logged {
+	font-size: 16px;
+	color: gray;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.neonRouge:hover {
+	color: orange;
+	text-shadow: 0 0 20px red, 0 0 10px red;
+}
+
+.type:not (.button ):hover>.neonRouge {
+	color: orange;
+	text-shadow: 0 0 20px red, 0 0 10px red;
+}
+
+.logo a strong:hover {
+	color: orange;
+	text-shadow: 0 0 20px red;
+}
+
+.menuCW li {
+	font-size: 16px;
+	padding: 15px 5px;
+	white-space: nowrap;
+}
+
+li a:not(.logo){
+	display: block;
+}
+
+.logo a strong {
+	font-size: 30px;
+	display: inline flex;
+}
+
+.logo {
+	font-size: 30px;
+}
+
+.logo a strong:hover {
+	font-size: 30px;
+}
+
+.button .neonRouge {
+	padding: 7px 15px;
+	border: 1px solid gray;
+	border-radius: 4px;
+}
+
+.button .neonRouge:hover {
+	border-color: orange;
+	box-shadow: 0 0 10px #ff7315;
+}
+
+.button .logged {
+	
+	padding: 7px 15px;
+	border: 1px solid #80ff00;
+	border-radius: 4px;
+	color: #80ff00;
+	text-shadow: 0 0 5px #00ff00;
+}
+
+.button .logged:hover {
+	color: #80ff00;
+	box-shadow: 0px 0px 10px 5px #43FF00;
+}
+
+                                                  /*  menu mobile  */
+.menuCW {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 0px;
+}
+
+.toggle {
+	order: 1;
+}
+
+.item.recherche {
+	order: 2;
+}
+
+.item.button {
+	order: 3;
+}
+
+.item {
+	width: 100%;
+	text-align: center;
+	order: 4;
+	display: none;
+}
+
+.item.active {
+	display: block;
+}
+
+.toggle {
+	cursor: pointer;
+}
+
+.toggle:hover>.bars, .toggle:hover>.bars::before, .toggle:hover>.bars::after
+	{
+	background: orange;
+	box-shadow: 0 0 5px red, 0 0 5px red;
+}
+
+.bars {
+	background: #999;
+	display: inline-block;
+	height: 3px;
+	position: relative;
+	top: -4px;
+	width: 25px;
+	border-radius: 2px;
+	
+}
+
+.bars::before, .bars::after {
+	background: #999;
+	content: "";
+	display: inline-block;
+	height: 3px;
+	position: absolute;
+	width: 25px;
+	border-radius: 2px;
+}
+
+.bars::before {
+	bottom: 8px;
+}
+
+.bars::after {
+	top: 8px;
+}
+
+												/*  menu tablette  */
+@media all and (min-width:620px) {
+	.menu {
+		justify-content: center;
+	}
+	.logo {
+		flex: 1;
+		margin-right: 0;
+	}
+	.item.button {
+		width: auto;
+		order: 1;
+		display: block;
+	}
+	.item.recherche {
+		width: auto;
+		order: 1;
+		display: block;
+	}
+	.toggle {
+		order: 2;
+	}
+	
+}
+
+												/*  menu PC  */
+@media all and (min-width:935px) {
+	.item {
+		justify-content: center;
+		width: auto;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.type {
+		flex: 1 auto;
+		display: block;
+		justify-content: center;
+	}
+	
+	.toggle {
+		display: none;
+	}
+	.logo {
+		order: 0;
+	}
+	.item {
+		order: 1;
+	}
+	.button {
+		order: 0;
+	}
+	.menuCW li {
+		padding: 15px 10px
+	}
+	.menuCW li.button {
+		padding-right: 10;
+	}
+}
+
+								               /*  images accueil     */
+.containerVignette {
+	margin: 0 100px 200px 100px;
+}
+
+.container {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-flow: wrap;
+}
+
+.box { //
+	margin: 20px; //
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	width: 157px;
+	height: 225px;
+	text-align: center;
+	box-shadow: 0px 0px 5px 0px #000000; //
+	filter: saturate(100%);
+	border-radius: 8px;
+}
+
+.boxVignette {
+	text-decoration: none;
+}
+
+.boxVignette:active {
+	outline-style: none;
+}
+
+.boutonVignette:hover>.box {
+	box-shadow: 0px 0px 15px 5px #6b6b6b;
+}
+
+.box:hover>.imgVignette {
+	filter: brightness(30%);
+}
+
+.tooltiptext:hover+.box>.imgVignette {
+	filter: brightness(30%);
+}
+
+.play {
+	opacity: 0;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	text-decoration: none;
+	color: white;
+	font-size: 40px;
+}
+
+.box:hover>.play {
+	opacity: 1;
+	position: absolute;
+	top: 35%;
+	left: 33%;
+	text-decoration: none;
+	color: white;
+	font-size: 60px;
+}
+
+.tooltiptext:active>.imgVignette {
+	filter: brightness(30%);
+}
+
+.imgVignette {
+	border-radius: 8px;
+	width: 100%;
+	height: 100%;
+}
+
+.serie {
+	position: absolute;
+	bottom: 0;
+	height: 20%;
+	width: 100%;
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+	text-align: center;
+	border-radius: 0 0 8px 8px;
+}
+
+.textBottom {
+	margin-bottom: 5px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	text-shadow: 0px 0px 4px black, 0px 0px 4px black, 0px 0px 4px black;
+}
+
+.boutonVignette {
+	margin: 20px;
+	padding: 0px;
+	position: relative;
+	width: 157px;
+	height: 225px;
+	background: transparent;
+	border: none;
+}
+
+														/*     TOOLTIPS        */
+.titreTootips {
+	border-radius: 4px;
+	padding-bottom: 3px;
+	background: #414141;
+	text-align: center;
+	text-decoration: underline;
+	font-weight: bold;
+	margin-bottom: 4px;
+	font-size: 16px;
+	letter-spacing: 3px;
+}
+
+.textTootips {
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.textResumeTootips {
+	hyphens: auto;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	margin-bottom: 5px;
+	text-align: justify;
+	text-justify: distribute;
+}
+
+.lienLecture {
+	text-align: center;
+	margin: 5px;
+	padding: 6px;
+	text-decoration: none;
+	color: #fff;
+	background: #575757;
+	border-radius: 12px;
+	font-size: 40px;
+	box-shadow: inset 0px 0px 2px 0px #000000;
+}
+
+.lienLecture:hover {
+	box-shadow: inset 0px 0px 5px 1px #000000;
+}
+
+.lienLecture .neonRouge {
+	text-decoration: none;
+}
+
+.textWhite {
+	color: #fff;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	color: #fff;
+}
+
+.tooltip .tooltiptext {
+	text-decoration: none;
+	visibility: hidden;
+	width: 200px;
+	background-color: #575757;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 12px;
+	padding: 10px 10px;
+	position: absolute;
+	z-index: 1;
+	top: 10px;
+	left: 102%;
+	box-shadow: 0px 0px 15px 5px #000000;
+	opacity: 0;
+	-moz-opacity: 0;
+	transition: all .3s ease-in-out
+}
+
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 20px;
+	right: 100%;
+	margin-top: -5px;
+	border-width: 10px;
+	border-style: solid;
+	border-color: transparent #575757 transparent transparent;
+	transition: 2s;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+	-moz-opacity: 1;
+	transition: all .3s ease-out
+}
+
+											/*       MENU LECTURE         */
+
+.stick {
+	position: sticky;
+	position: -webkit-sticky;
+	margin: auto;
+	top: 0px;
+	display:block;
+	padding: 10px;
+	background: #333333;
+	
+}
+
+.divRetourAccueil {
+	position: relative;
+	padding: 10px;
+	background: #333333;
+}
+.retourAccueil{
+	cursor:pointer;
+	text-align: center;
+	margin:5px;
+	padding:6px;	
+	text-decoration: none;
+    color: #fff;
+    background: #575757;
+    border-radius:12px;
+    font-size:12px;
+    box-shadow: inset 0px 0px 2px 0px #000000;
+	}
+	
+.retourAccueil:hover{
+	   box-shadow: inset 0px 0px 5px 1px #000000;
+}
+
+.barreInfoLecture{
+	display: inline;
+	background: #333333;
+	vertical-align:middle; 
+}
+
+												/*    IMAGES      */
+.images {
+	width: auto;
+}
+
+@media screen and (max-width:770px) {
+	.images {
+		width: 100%;
+	}
+}

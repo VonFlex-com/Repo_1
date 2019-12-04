@@ -35,17 +35,17 @@ public class BDimageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			listUser(request, response);
+			listImage(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	private void listUser(HttpServletRequest request, HttpServletResponse response)
+	private void listImage(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		List<BDImage> listUser = bdDAO.selectAllUsers();
-		request.setAttribute("listUser", listUser);
+		List<BDImage> listImage = bdDAO.selectAllImages();
+		request.setAttribute("listImage", listImage);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 		dispatcher.forward(request, response);
 	}

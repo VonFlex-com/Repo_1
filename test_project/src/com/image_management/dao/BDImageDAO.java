@@ -26,7 +26,7 @@ public class BDImageDAO {
 	public BDImage get(int id) throws SQLException, IOException {
 		BDImage book = null;
 
-		String sql = "SELECT * FROM "+tableName +" WHERE "+ id +" = ?";
+		String sql = "SELECT * FROM "+ tableName +" WHERE "+ id +" = ?";
 		
 		try (Connection con = MyConnectionProvider.getCon()) {
 			PreparedStatement statement = con.prepareStatement(sql);
@@ -68,10 +68,10 @@ public class BDImageDAO {
 	}
 	
 
-    public List < BDImage > selectAllUsers() throws IOException {
+    public List < BDImage > selectAllImages() throws IOException {
 
         // using try-with-resources to avoid closing resources (boiler plate code)
-        List < BDImage > users = new ArrayList < > ();
+        List < BDImage > images = new ArrayList < > ();
         // Step 1: Establishing a Connection
         try (Connection con = MyConnectionProvider.getCon();
 
@@ -105,12 +105,12 @@ public class BDImageDAO {
 				outputStream.close();
                 
                 
-                users.add(new BDImage(id, base64Image, bd_id));
+                images.add(new BDImage(id, base64Image, bd_id));
             }
         } catch (SQLException e) {
             printSQLException(e);
         }
-        return users;
+        return images;
     }
     
 	private void printSQLException(SQLException ex) {
